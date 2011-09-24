@@ -1,0 +1,19 @@
+
+ABOUT
+=====
+
+This is a simple interface to python's multiprocessing.Pool to map functions over data
+Default behavior is to use a single processor, identical to using itertools.imap.
+In the case of multiple processors (specified using ez.pool.setup_pool), computations are farmed out to other processes using the multiprocessing library.
+
+EXAMPLE
+=======
+
+  import ezpool
+
+  nprocs = 42
+  ezpool.setup_pool(nprocs)
+
+  def fn(x): return x*82
+  data = range(99)
+  results = ezpool.map(fn, data)
