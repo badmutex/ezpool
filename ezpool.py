@@ -39,7 +39,7 @@ class Pool(object):
 
         @return (list or generator): a list (nprocs > 1 or force == True) or a generator (nprocs == 1) of values from applying the function to the iterable
         """
-        _logger.info('mapping using %s processors' % self.nprocs)
+        _logger.debug('mapping using %s processors' % self.nprocs)
 
         if self.nprocs == 1:
             generator = itertools.imap(func, iterable)
